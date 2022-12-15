@@ -1,0 +1,29 @@
+﻿@model WebCafe.Models.DanhMuc
+@{
+    ViewBag.Title = "SuaDanhMuc";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<form action="~/DanhMuc/SuaDanhMuc/@Model.MaDanhMuc" method="post">
+    <div class="container-fluid">
+        <div class="row">
+            <input type="hidden" class="form-control" id="formrow-taikhoan-input" name="MaDanhMuc" value="@Model.MaDanhMuc" required>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="formrow-password-input">Tên danh mục</label>
+                    <input type="text" class="form-control" id="formrow-hoten-input" name="TenDanhMuc" value="@Model.TenDanhMuc" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="slug">Slug</label>
+                    <input type="text" class="form-control" id="slug" name="Url_friendly" value="@Model.Url_friendly" required>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary w-md">Sửa</button>
+        </div>
+    </div>
+</form>

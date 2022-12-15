@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Thêm mới";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+    <form action="~/QLSanPham/ThemMoi" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="TenSP">Tên sản phẩm</label>
+                    <input id="TenSP" name="TenSP" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="nguonGoc">Nguồn gốc</label>
+                    <input id="manufacturername" name="NguonGoc" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="soLuong">Số lượng</label>
+                    <input id="soLuong" name="SoLuongTon" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="khoiLuong">Khối lượng</label>
+                    <input id="khoiLuong" name="KhoiLuong" type="number" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="slug">Slug</label>
+                    <input id="slug" name="Url_friendly" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="donGia">Đơn giá</label>
+                    <input id="donGia" name="DonGia" type="number" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Loại sản phẩm</label>
+                    <select class="form-control select2" name="MaLoai">
+                        @foreach (var item in ViewBag.LoaiSanPham)
+                        {
+                            <option value="@item.MaLoai">@item.TenLoai</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox  custom-checkbox-success mb-3">
+                        <input type="checkbox" class="custom-control-input" id="customCheckcolor2" name="DaXoa" value="true">
+                        <label class="custom-control-label" for="customCheckcolor2">Hiển thị sản phẩm</label>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="preview">
+                        <img id="img-preview" src="" />
+                        <label id="labelimg" for="file-input">Tải hình ảnh</label>
+                        <input accept="image/*" type="file" name="hinhAnh" id="file-input" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <label id="labelmota" for="moTa">Mô tả sản phẩm</label>
+                <textarea class="summernote" name="MoTa"></textarea>
+            </div>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary mr-1 waves-effect waves-light">Thêm mới</button>
+    </form>
+
+
+@section ClientScript{
+    @*img upload*@
+    <script src="~/Assets/admin/js/pages/upload_img.js"></script>
+    <!--tinymce js-->
+    <script src="~/Assets/admin/libs/tinymce/tinymce.min.js"></script>
+
+    <!-- Summernote js -->
+    <script src="~/Assets/admin/libs/summernote/summernote-bs4.min.js"></script>
+    <script src="~/Assets/admin/libs/select2/js/select2.min.js"></script>
+
+    <!-- init js -->
+    <script src="~/Assets/admin/js/pages/form-editor.init.js"></script>
+    <script src="~/Assets/admin/js/pages/form-advanced.init.js"></script>
+}

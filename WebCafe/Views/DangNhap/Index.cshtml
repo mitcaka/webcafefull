@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Assets/Home/css/login.css">
+
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0"></div>
+        </div>
+    </div>
+</div>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-check-all mr-2"></i>
+        @TempData["Success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-check-all mr-2"></i>
+        @TempData["Error"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+}
+<div class="site-section">
+    <div class="container">
+        <!--code-->
+
+        <div id="logreg-forms">
+            <form class="form-signin" action="~/DangNhap/DangNhapThanhVien" method="post">
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Đăng Nhập</h1>
+                <div class="social-login">
+                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Đăng Nhập Facebook</span> </button>
+                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Đăng Nhập Google+</span> </button>
+                </div>
+                <p style="text-align:center"> Hoặc  </p>
+                <input type="text" id="inputUsername" class="form-control" name="TaiKhoan" placeholder="Tài Khoản" required="" autofocus="">
+                <input type="password" id="inputPassword" class="form-control" name="MatKhau" placeholder="Mật Khẩu" required="">
+
+                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Đăng Nhập</button>
+                <a href="#" id="forgot_pswd">Không Nhớ Mật Khẩu</a>
+                <hr>
+                <!-- <p>Don't have an account!</p>  -->
+                <button class="btn btn-block" type="button" id="btn-signup" style="border-color: #28a745;"><i class="fas fa-user-plus"></i> <a href="register.html">Đăng Kí Tài Khoản Mới</a> </button>
+            </form>
+
+            <br>
+
+        </div>
+
+
+
+
+
+        <!--code-->
+
+    </div>
+</div>
+@section ClientScript{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="~/Assets/Home/js/login.js"></script>
+
+
+}
+

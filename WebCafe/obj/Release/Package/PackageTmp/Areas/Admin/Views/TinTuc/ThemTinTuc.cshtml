@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Thêm tin tức";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form action="~/TinTuc/ThemTinTuc" method="post">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="formrow-firstname-input">Tiêu đề</label>
+                    <input type="text" class="form-control" name="TieuDe" required>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label for="formrow-firstname-input">Url-friendly</label>
+                    <input type="text" class="form-control" name="slug" required>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="control-label">Danh mục</label>
+                    <select class="form-control select2" name="MaDanhMuc" style="font-size=25px;">
+                        @foreach (var item in ViewBag.DanhMuc)
+                        {
+                            <option value="@item.MaDanhMuc">@item.TenDanhMuc</option>
+
+                        }
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <textarea class="summernote" name="NoiDung"></textarea>
+            </div>
+        </div>
+        <br />
+
+        <div>
+            <button type="submit" class="btn btn-primary w-md">Thêm mới</button>
+        </div>
+    </div>
+</form>
+@section ClientScript{
+    <!--tinymce js-->
+    <script src="~/Assets/admin/libs/tinymce/tinymce.min.js"></script>
+
+    <!-- Summernote js -->
+    <script src="~/Assets/admin/libs/summernote/summernote-bs4.min.js"></script>
+    <script src="~/Assets/admin/libs/select2/js/select2.min.js"></script>
+
+    <!-- init js -->
+    <script src="~/Assets/admin/js/pages/form-editor.init.js"></script>
+    <script src="~/Assets/admin/js/pages/form-advanced.init.js"></script>
+
+
+
+
+}

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="QuanLyCaPheEntities-Web.config Connection String" description="QuanLyCaPheEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.QuanLyCaPhe.csdl|res://*/Models.QuanLyCaPhe.ssdl|res://*/Models.QuanLyCaPhe.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-EEH7OEQ\SQLEXPRESS;initial catalog=QuanLyCaPhe;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ADMIN\\Desktop\\Mobile\\web12-08\\WebCafe\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QuanLyCaPheEntities']/@connectionString" />
+  </parameter>
+</parameters>

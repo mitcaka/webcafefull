@@ -1,0 +1,42 @@
+﻿@model WebCafe.Models.LoaiSanPham
+@{
+    ViewBag.Title = "Sửa lại sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <form action="~/LoaiSanPham/SuaLoai/@Model.MaLoai" method="post" enctype="multipart/form-data">
+        <div class="row">
+                <input type="hidden" class="form-control" id="formrow-taikhoan-input" name="MaLoai" value="@Model.MaLoai" required>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="formrow-password-input">Tên loại</label>
+                    <input type="text" class="form-control" id="formrow-hoten-input" name="TenLoai" value="@Model.TenLoai" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="formrow-email-input">Slug</label>
+                    <input type="text" class="form-control" id="formrow-email-input" name="Url_friendly" value="@Model.Url_friendly" required>
+                </div>
+            </div>
+        </div>
+        <div class="container-img">
+            <div class="preview">
+                <img id="img-preview" src="~/Upload/loaisp/@Model.HinhAnh" />
+
+                <label id="labelimg" for="file-input">Tải hình ảnh</label>
+                <input accept="image/*" type="file" name="hinhAnh" id="file-input" />
+            </div>
+        </div>
+        <br />
+        <div>
+            <button type="submit" class="btn btn-primary w-md">Thêm mới</button>
+        </div>
+    </form>
+</div>
+
+@section ClientScript{
+    @*img upload*@
+    <script src="~/Assets/admin/js/pages/upload_img.js"></script>}
+

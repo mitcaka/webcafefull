@@ -1,0 +1,40 @@
+﻿@model WebCafe.Models.Admin
+
+@{ ViewBag.Title = "Sửa tài khoản";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
+
+<h2>Nhập thông tin tài khoản sửa</h2>
+
+<form action="~/TaiKhoan/SuaTaiKhoan/@Model.TaiKhoan" method="post">
+    <div class="row">
+        <input type="hidden" class="form-control" id="formrow-taikhoan-input" name="TaiKhoan" value="@Model.TaiKhoan" required>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="formrow-password-input">Họ tên</label>
+                <input type="text" class="form-control" id="formrow-hoten-input" name="HoTen" value="@Model.HoTen" required>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="formrow-email-input">Email</label>
+                <input type="email" class="form-control" id="formrow-email-input" name="Email" value="@Model.Email" required>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="formrow-password-input">Mật khẩu</label>
+                <input type="password" class="form-control" id="formrow-password-input" name="MatKhau" value="*****" required>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="formrow-firstname-input">Địa chỉ</label>
+        <textarea type="text" class="form-control" id="formrow-diachi-input" name="DiaChi" required> @Model.DiaChi</textarea>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary w-md">Sửa</button>
+    </div>
+</form>

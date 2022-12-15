@@ -1,0 +1,180 @@
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\WebCafe.dll.config
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\WebCafe.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\WebCafe.pdb
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\csc.exe
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\csc.exe.config
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\csc.rsp
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\csi.exe
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\csi.rsp
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\System.AppContext.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\vbc.exe
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\vbc.exe.config
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\vbc.rsp
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\VBCSCompiler.exe
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Antlr3.Runtime.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\EntityFramework.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Newtonsoft.Json.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.Helpers.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.Mvc.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.Optimization.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.Razor.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.WebPages.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.WebPages.Razor.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\WebGrease.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\EntityFramework.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.Helpers.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.Mvc.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.Optimization.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.Razor.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.WebPages.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.WebPages.Razor.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Newtonsoft.Json.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Antlr3.Runtime.pdb
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.csproj.CopyComplete
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.dll
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.pdb
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.csproj.AssemblyReference.cache
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\WebCafe.dll.config
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\WebCafe.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\WebCafe.pdb
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\csc.exe
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\csc.exe.config
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\csc.rsp
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\csi.exe
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\csi.rsp
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\System.AppContext.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\System.Collections.Immutable.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\System.IO.FileSystem.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\System.Reflection.Metadata.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\vbc.exe
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\vbc.exe.config
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\vbc.rsp
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\VBCSCompiler.exe
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\roslyn\VBCSCompiler.exe.config
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\Antlr3.Runtime.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\EntityFramework.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\EntityFramework.SqlServer.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\Microsoft.Web.Infrastructure.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\Newtonsoft.Json.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.Helpers.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.Mvc.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.Optimization.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.Razor.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.WebPages.Deployment.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.WebPages.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.WebPages.Razor.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\WebGrease.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\EntityFramework.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\EntityFramework.SqlServer.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.Helpers.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.Mvc.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.Optimization.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.Razor.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.WebPages.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.WebPages.Deployment.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\System.Web.WebPages.Razor.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\Newtonsoft.Json.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\Antlr3.Runtime.pdb
+D:\WebCafe-main\WebCafe-main\WebCafe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\WebCafe-main\WebCafe-main\WebCafe\obj\Debug\WebCafe.csprojAssemblyReference.cache
+D:\WebCafe-main\WebCafe-main\WebCafe\obj\Debug\WebCafe.csproj.CoreCompileInputs.cache
+D:\WebCafe-main\WebCafe-main\WebCafe\obj\Debug\WebCafe.csproj.CopyComplete
+D:\WebCafe-main\WebCafe-main\WebCafe\obj\Debug\WebCafe.dll
+D:\WebCafe-main\WebCafe-main\WebCafe\obj\Debug\WebCafe.pdb
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\WebCafe.dll.config
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\WebCafe.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\WebCafe.pdb
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\csc.exe
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\csc.exe.config
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\csc.rsp
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\csi.exe
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\csi.rsp
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\System.AppContext.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\vbc.exe
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\vbc.exe.config
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\vbc.rsp
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\VBCSCompiler.exe
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\Antlr3.Runtime.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\EntityFramework.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\Newtonsoft.Json.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.Helpers.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.Mvc.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.Optimization.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.Razor.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.WebPages.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.WebPages.Razor.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\WebGrease.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\EntityFramework.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.Helpers.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.Mvc.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.Optimization.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.Razor.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.WebPages.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\System.Web.WebPages.Razor.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\Newtonsoft.Json.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\Antlr3.Runtime.pdb
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\obj\Debug\WebCafe.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\obj\Debug\WebCafe.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\obj\Debug\WebCafe.csproj.CopyComplete
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\obj\Debug\WebCafe.dll
+C:\Users\ADMIN\Desktop\Mobile\web12-08\WebCafe\obj\Debug\WebCafe.pdb

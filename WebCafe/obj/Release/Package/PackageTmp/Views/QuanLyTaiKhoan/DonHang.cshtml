@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Đơn hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a href="index.html">Trang chủ</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Đơn hàng</strong></div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <!-- bang 1 -->
+            <div class="site-blocks-table">
+                <h3>Đơn hàng đang xử lý</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="product-thumbnail">Ngày đặt</th>
+                            <th class="product-name">Tình trạng giao</th>
+                            <th class="product-price">Sản phẩm</th>
+                            <th class="product-quantity">Hình thức thanh toán</th>
+                            <th class="product-total">Tổng cộng</th>
+                            <th class="product-remove">Hủy đơn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.DonHangXuLy != null)
+                        {
+                            foreach (var item in ViewBag.DonHangXuLy)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.NgayDat
+                                    </td>
+                                    <td>
+                                        @item.TinhTrangGiao
+                                    </td>
+                                    <td>
+                                        <table class="table site-block-order-table mb-5">
+                                            <tbody>
+                                                @{ double tongTien = 0;}
+                                                @foreach (var ct in item.ChiTietDonHangs)
+                                                {
+
+                                                    <tr>
+                                                        <td>@ct.SanPham.TenSP <strong class="mx-2">x</strong> @ct.SoLuong</td>
+                                                        @{ tongTien += ct.SanPham.DonGia * ct.SoLuong;}
+                                                    </tr>
+                                                            }
+
+                                            </tbody>
+                                        </table>
+
+                                    </td>
+                                    <td>
+                                        @item.DaThanhToan
+
+                                    </td>
+
+                                    <td>@String.Format("{0:0,0 vnđ}", tongTien)</td>
+                                    <td><a href="#" class="btn btn-warning btn-sm">X</a></td>
+                                </tr>
+                             }
+
+
+
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td>Bạn không có đơn hàng nàotd>
+                                </tr>
+                            }
+                        </tbody>
+                </table>
+            </div>
+            <!-- end bang 1 -->
+            <!-- bang 2 -->
+            <div class="site-blocks-table">
+                <h3>Đơn hàng đang được giao</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="product-thumbnail">Ngày đặt</th>
+                            <th class="product-name">Tình trạng giao</th>
+                            <th class="product-price">Sản phẩm</th>
+                            <th class="product-quantity">Hình thức thanh toán</th>
+                            <th class="product-total">Tổng cộng</th>
+                            <th class="product-remove">Đã nhận hàng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.DonHangVanChuyen != null)
+                        {
+                            foreach (var item in ViewBag.DonHangVanChuyen)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.NgayDat
+                                    </td>
+                                    <td>
+                                        @item.TinhTrangGiao
+                                    </td>
+                                    <td>
+                                        <table class="table site-block-order-table mb-5">
+                                            <tbody>
+                                                @{ double tongTien = 0;}
+                                                @foreach (var ct in item.ChiTietDonHangs)
+                                                {
+
+                                                    <tr>
+                                                        <td>@ct.SanPham.TenSP <strong class="mx-2">x</strong> @ct.SoLuong</td>
+                                                        @{ tongTien += ct.SanPham.DonGia * ct.SoLuong;}
+                                                    </tr>
+                                                }
+
+                                            </tbody>
+                                        </table>
+
+                                    </td>
+                                    <td>
+                                        @item.DaThanhToan
+
+                                    </td>
+                                    <td>@String.Format("{0:0,0 vnđ}", tongTien)</td>
+                                    <td><a href="#" class="btn btn-warning btn-sm"><i class="mdi mdi-check-circle"></i></a></td>
+                                </tr>
+                            }
+
+
+
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>Không có đơn hàng nào đang vận chuyển<td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- end bang 2 -->
+        </div>
+    </div>
+</div>
+

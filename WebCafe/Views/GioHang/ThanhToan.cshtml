@@ -1,0 +1,333 @@
+﻿@model IEnumerable<WebCafe.Models.CartModel>
+@{
+    ViewBag.Title = "Thanh Toán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a href="index.html">Trang chủ</a> <span class="mx-2 mb-0">/</span> <a href="cart.html">Giỏ hàng</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Thanh toán</strong></div>
+        </div>
+    </div>
+</div>
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-check-all mr-2"></i>
+        @TempData["Success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-check-all mr-2"></i>
+        @TempData["Error"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>}
+<div class="site-section">
+    <div class="container">
+        @if(Session["TaiKhoanTV"] == null) { 
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="border p-4 rounded" role="alert">
+                    Bạn đã có tài khoản? <a href="@Url.Action("Index", "DangNhap")">Nhấn vào đây</a> để đăng nhập
+                </div>
+            </div>
+        </div>
+        }
+        <form action="~/XacNhanThanhToan/ThemMoiDonHang" method="post">
+            <div class="row">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <h2 class="h3 mb-3 text-black">Chi tiết thanh toán</h2>
+                    <div class="p-3 p-lg-5 border">
+                        <div class="form-group">
+                            <label for="c_create_account" class="text-black" data-toggle="collapse" href="#create_an_account" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="radio" name="infoThanhToan" value="infoLogin" id="myCheckbox" required> Sử dụng thông tin tài khoản đăng nhập?</label>
+                            <div class="collapse" id="create_an_account">
+                                <div class="py-2" style="padding: 10px; border: 1px solid;">
+                                    <input id="ipMa" type="hidden" name="ipMa" value="@Session["TaiKhoanTV"]" />
+                                    <p id="HoTen" class="mb-3">Họ Tên : </p>
+                                    <p id="DiaChi" class="mb-3">Địa chỉ : </p>
+                                    <p id="Email" class="mb-3">Email : </p>
+                                    <p id="DienThoai" class="mb-3">Số điện thoại : </p>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="c_create_account" class="text-black" data-toggle="collapse" href="#create_new_account" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="radio" name="infoThanhToan" value="infoNew" id="myCheckbox2"> Sử dụng thông tin khác?</label>
+                        <div class="collapse" id="create_new_account">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_address" class="text-black">Họ Tên <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="ipHoTen1" name="HoTen">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="c_country" class="text-black">Chọn tỉnh <span class="text-danger">*</span></label>
+                                <select class="form-control" name="Tinh" id="province">
+                                    Chọn tỉnh
+                                </select>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label for="c_country" class="text-black">Chọn huyện <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="Huyen" id="district">
+                                        Chọn huyện
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="c_country" class="text-black">Chọn xã <span class="text-danger">*</span></label>
+                                    <select class="form-control" name="Xa" id="ward">
+                                        Chọn xã
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_companyname" class="text-black">Địa chỉ cụ thể </label>
+                                    <input type="text" class="form-control" id="DCcuthe" placeholder="Tên đường, tòa nhà, số nhà" name="c_companyname">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-5">
+                                <div class="col-md-6">
+                                    <label for="c_email_address" class="text-black">Email<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="ipEmail1" name="email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="c_phone" class="text-black">Số điện thoại : <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="ipDienThoai1" name="dienthoai">
+                                </div>
+                            </div>
+                            <button type='button' class="btn btn-outline-warning btn-md py-3" id="xacNhan">Xác nhận địa chỉ thanh toán</button>
+                            <br /><br />
+                            <div class="py-2" style="padding: 10px; border: 1px solid;">
+                                <p id="HoTenNhap" class="mb-3">Họ Tên : </p>
+                                <input type="hidden" id="ipHoTen" name="ipHoTen" />
+                                <p id="DiaChiNhap" class="mb-3">Địa chỉ : </p>
+                                <input type="hidden" id="ipDiaChi" name="ipDiaChi" />
+                                <p id="EmailNhap" class="mb-3">Email : </p>
+                                <input type="hidden" id="ipEmail" name="ipEmail"/>
+                                <p id="DienThoaiNhap" class="mb-3">Số điện thoại : </p>
+                                <input type="hidden" id="ipDienThoai" name="ipDienThoai" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="row mb-5">
+                        <div class="col-md-12">
+                            <h2 class="h3 mb-3 text-black">Mã giảm giá</h2>
+                            <div class="p-3 p-lg-5 border">
+
+                                <label for="c_code" class="text-black mb-3">Nhập mã giảm giá bạn có</label>
+                                <div class="input-group w-75">
+                                    @if (Session["MaGiamGia"] != null)
+                                    {
+                                        <input type="text" class="form-control" id="c_code" placeholder="Mã giảm giá" value="@Session["MaGiamGia"]" aria-label="Coupon Code" aria-describedby="button-addon2">
+                                    }
+                                    else
+                                    {
+                                        <input type="text" class="form-control" id="c_code" placeholder="Mã giảm giá" aria-label="Coupon Code" aria-describedby="button-addon2">
+                                    }
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary btn-sm" type="button" id="coupon">Áp dụng</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-5">
+                        <div class="col-md-12">
+                            <h2 class="h3 mb-3 text-black">Đơn hàng của bạn</h2>
+                            <div class="p-3 p-lg-5 border">
+                                <table class="table site-block-order-table mb-5">
+                                    <thead>
+                                    <th>Sản phẩm</th>
+                                    <th>Tổng tiền</th>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model != null)
+                                        {
+                                            foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>@item.SanPham.TenSP<strong class="mx-2">x</strong> @item.Quantity</td>
+                                                    <td>
+                                                        @{
+                                                            double gia = (double)item.SanPham.DonGia;
+                                                            int soLuong = item.Quantity;
+                                                            double result = gia * soLuong;
+                                                            <Span id="tongTienSP"> @String.Format("{0:0,0 vnđ}", result) </Span>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                        <tr>
+                                            @{double tongTienThanhToan = 0; }
+                                            @if (Model != null)
+                                            {
+                                                foreach (var item in Model)
+                                                {
+                                                    if (item.SanPham.DonGia != null)
+                                                    {
+                                                        double gia = (double)item.SanPham.DonGia;
+                                                        int soLuong = item.Quantity;
+                                                        double result = gia * soLuong;
+                                                        tongTienThanhToan += result;
+                                                    }
+
+                                                }
+                                            }
+                                            <td class="text-black font-weight-bold"><strong>Tổng tiền</strong></td>
+                                            <td class="text-black">@String.Format("{0:0,0 vnđ}", tongTienThanhToan)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-black font-weight-bold"><strong>Thanh toán</strong></td>
+                                            @{double tienTong = tongTienThanhToan; }
+                                            @if (Session["GiaTri"] != null)
+                                            {
+                                                var giaTri = (double)Session["GiaTri"];
+                                                tienTong = tongTienThanhToan - tongTienThanhToan * giaTri;
+                                            }
+                                            <td class="text-black font-weight-bold">
+                                                <strong id="tienTong">@String.Format("{0:0,0 vnđ}", tienTong)</strong>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                                <div class="border p-3 mb-3">
+                                    <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Hình thức thanh toán</a></h3>
+                                    <div class="collapse" id="collapsebank">
+                                        <div class="py-2">
+                                            <label for="c_create_account" class="text-black" data-toggle="collapse" href="#cod" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="radio" name="typeThanhToan" value="cod" required> Thanh toán khi nhận hàng</label>
+                                            <div class="collapse" id="cod">
+                                                <div class="py-2" style="padding: 10px; border: 1px solid;">
+                                                    <p class="mb-3 text-black">Ship COD toàn quốc đồng giá 30.000 VNĐ vui lòng chuẩn bị số tiền hàng và tiền ship tương ứng khi nhận hàng.  </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapse" id="collapsebank">
+                                        <div class="py-2">
+                                            <label for="c_create_account" class="text-black" data-toggle="collapse" href="#vnpay" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="radio" name="typeThanhToan" value="vnpay"> Thanh toán qua VNPAY <span class="text-danger">(Freeship)</span></label>
+                                            <div class="collapse" id="vnpay">
+                                                <div class="py-2" style="padding: 10px; border: 1px solid;">
+                                                    <p class="mb-3 text-black">Chọn thanh toán quét mã hoặc nhập thông tin thẻ ngân hàng.  </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button class="btn btn-warning btn-lg py-3 btn-block" type="submit">Đặt hàng</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <!-- </form> -->
+    </div>
+</div>
+
+@section ClientScript{
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/Assets/Home/js/apiprovince.js"></script>
+    <script src="~/Assets/admin/libs/select2/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#coupon").click(function () {
+                var model = {};
+                //lấy ma giam gia
+                model.Ma = $("#MaGiamGia").val();
+                debugger;
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("AddCoupon", "GioHang")',
+                    data: JSON.stringify(model),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (data != null) {
+                            var tienTra = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(@tongTienThanhToan - @tongTienThanhToan* data.GiaTri);
+                            $('#tienTong').text(tienTra);
+                        } else {
+                            alert(data.Message);
+                        }
+                    },
+                    error: function () {
+                        alert("Bạn chưa đăng nhập hoặc mã giảm giá không hợp lệ");
+                    }
+                });
+                return false;
+            });
+
+
+            $("#myCheckbox").change(function () {
+                if ($(this).is(":checked")) {
+                    var model = {};
+                    model.MaTV = $("#ipMa").val();
+                    console.log($("#ipMa").val());
+
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("InfoAccount", "GioHang")',
+                        data: JSON.stringify(model),
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            if (data.HoTen != null) {
+                                $('#HoTen').append(data.HoTen);
+                                $('#DiaChi').append(data.DiaChi);
+                                $('#Email').append(data.Email);
+                                $('#DienThoai').append(data.DienThoai);
+                                $('#ipHoTen').val(data.HoTen);
+                                $('#ipDiaChi').val(data.DiaChi);
+                                $('#ipEmail').val(data.Email);
+                                $('#ipDienThoai').val(data.DienThoai);
+                            } else {
+                                alert(data.Message);
+                                $('input[type=checkbox]').prop('checked', false);
+                            }
+                        },
+                        error: function () {
+                            alert("Bạn chưa đăng nhập");
+
+                        }
+                    });
+                    return false;
+                }
+            });
+
+            $("#xacNhan").click(function () {
+                $('#HoTenNhap').append($('#ipHoTen1').val());
+                $('#ipHoTen').val($('#ipHoTen1').val());
+                $('#DiaChiNhap').append($('#DCcuthe').val() + ', ' + $('#ward option:selected').text() + ', ' + $('#district option:selected').text() + ', ' + $('#province option:selected').text());
+                $('#ipDiaChi').val($('#DCcuthe').val() + ', ' + $('#ward option:selected').text() + ', ' + $('#district option:selected').text() + ', ' + $('#province option:selected').text() );
+                $('#EmailNhap').append($('#ipEmail1').val());
+                $('#ipEmail').val($('#ipEmail1').val());
+                $('#DienThoaiNhap').append($('#ipDienThoai1').val());
+                $('#ipDienThoai').val($('#ipDienThoai1').val());
+            });
+    });
+    </script>
+}

@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "Sửa tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model WebCafe.Models.ThanhVien
+@{
+    ViewBag.Title = "Quản lý tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a href="index.html">Trang chủ</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Sửa tài khoản</strong></div>
+        </div>
+    </div>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-check-all mr-2"></i>
+        @TempData["Success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="mdi mdi-check-all mr-2"></i>
+        @TempData["Error"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+}
+<div class="site-section">
+    <div class="container">
+        <!--code-->
+        <div class="container">
+            <div class="row justify-content-around">
+                <form class="col-md-6 bg-light p-3 my-3" method="post">
+                    <h1 class="text-center text-uppercase h3 py-3">Sửa tài khoản Thành Viên</h1>
+
+                    <div class="form-group">
+                        <label for="fullname">Tài Khoản</label>
+                        <input type="text" name="TaiKhoan" id="fullname" value="@Model.TaiKhoan" class="form-control" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c_create_account" class="text-black" data-toggle="collapse" href="#create_an_account" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="checkbox" value="DoiMK" name="isChangePass" id="c_create_account"> Đổi mật khẩu?</label>
+                        <div class="collapse" id="create_an_account">
+                            <div class="py-2">
+                                <div class="form-group">
+                                    <label for="c_account_password" class="text-black">Nhập mậu khẩu cũ</label>
+                                    <input type="password" class="form-control" id="c_account_password" name="MatKhauCu" placeholder="">
+                                    <label for="c_account_password" class="text-black">Nhập mậu khẩu mới</label>
+                                    <input type="password" class="form-control" id="c_account_password" name="MatKhauMoi" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullname">Họ Và Tên</label>
+                        <input type="text" name="HoTen" id="fullname" value="@Model.HoTen" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c_country" class="text-black">Chọn tỉnh <span class="text-danger">*</span></label>
+                        <select class="form-control" name="Tinh" id="province">
+                            Chọn tỉnh
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="c_country" class="text-black">Chọn huyện <span class="text-danger">*</span></label>
+                            <select class="form-control" name="Huyen" id="district">
+                                Chọn huyện
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="c_country" class="text-black">Chọn xã <span class="text-danger">*</span></label>
+                            <select class="form-control" name="Xa" id="ward">
+                                Chọn xã
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label for="c_companyname" class="text-black">Địa chỉ cụ thể </label>
+                            <input type="text" class="form-control" id="DCcuthe" placeholder="Tên đường, tòa nhà, số nhà" name="c_companyname">
+                        </div>
+                    </div>
+                    <button type='button' class="btn btn-outline-warning btn-sm" id="xacNhan">Xác nhận địa chỉ thanh toán</button>
+
+                    <div class="form-group">
+                        <label for="c_order_notes" class="text-black">Địa Chỉ</label>
+                        <textarea name="DiaChi" id="ipDiaChi" cols="30" rows="5" class="form-control">@Model.DiaChi</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullname">Email</label>
+                        <input type="text" name="Email" id="fullname" value="@Model.Email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullname">Điện Thoại</label>
+                        <input type="text" name="DienThoai" id="fullname" value="@Model.DienThoai" class="form-control" required>
+                    </div>
+
+                    <input type="submit" value="Sửa tài khoản" class="btn-primary btn btn-block">
+                </form>
+            </div>
+
+        </div>
+        <!--code-->
+    </div>
+    @section ClientScript{
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="~/Assets/Home/js/apiprovince.js"></script>
+        <script src="~/Assets/admin/libs/select2/js/select2.min.js"></script>
+        <script type="text/javascript">
+        $(function () {
+            $("#xacNhan").click(function () {
+                $('#ipDiaChi').val($('#DCcuthe').val() + ', ' + $('#ward option:selected').text() + ', ' + $('#district option:selected').text() + ', ' + $('#province option:selected').text() );
+            });
+    });
+        </script>
+
+    }
+
+

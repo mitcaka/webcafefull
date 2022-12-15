@@ -1,0 +1,114 @@
+﻿@using WebCafe.Models
+@model PhieuNhap
+@{
+    ViewBag.Title = "Tạo phiếu nhập";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("TaoPhieuNhap", "QLNhapHang", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="control-label">Chọn nhà cung cấp</label>
+                <select class="form-control select2 MaNCC" name="MaNCC">
+                    @foreach (var item in ViewBag.MaNCC)
+                    {
+                        <option value="@item.MaNCC">@item.TenNCC</option>
+                    }
+
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6">
+            <table class="table tblChiTietNhapHang">
+                @{ IEnumerable<SanPham> lstSanPham = ViewBag.ListSanPham as IEnumerable<SanPham>;}
+                <tr class="trAppend" style="display:none" >
+                    <td>
+                        <select class="form-control ddlSanPham"  name="" >
+                            @foreach (var item in lstSanPham)
+                            {
+                                <option value="@item.MaSP">@item.TenSP</option>
+                            }
+                        </select>
+                    </td>
+                    <td><input type="number" name="" class="txtDonGia form-control" value="0" required></td>
+                    <td><input type="number" class="txtSoLuong form-control" value="0" required></td>
+                    <td><input name="" type="button" class="btnDelete btn btn-danger" style="width:37px;height:37px;" value="X"></td>
+                </tr>
+                <tr class="trFirstChild" data-id="-1">
+                    <td>Sản phẩm</td>
+                    <td>Đơn giá nhập</td>
+                    <td>Số lượng</td>
+                </tr>
+            </table>
+            <div class="form-group">
+                <input type="button" value="+" class="btn btn-success" id="btnAdd" />
+                <input type="submit" value="Nhập hàng" class="btn btn-primary" id="btnAdd" />
+
+            </div>
+        </div>
+    </div>
+}
+
+@section ClientScript{
+    @*img upload*@
+    <script src="~/Assets/admin/js/pages/upload_img.js"></script>
+    <!--tinymce js-->
+    <script src="~/Assets/admin/libs/tinymce/tinymce.min.js"></script>
+
+    <!-- Summernote js -->
+    <script src="~/Assets/admin/libs/summernote/summernote-bs4.min.js"></script>
+    <script src="~/Assets/admin/libs/select2/js/select2.min.js"></script>
+
+    <!-- init js -->
+    <script src="~/Assets/admin/js/pages/form-editor.init.js"></script>
+    <script src="~/Assets/admin/js/pages/form-advanced.init.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnAdd").click(function () {
+                var id_cuoi = $(".tblChiTietNhapHang").find("tr:last-child").attr("data-id");
+                i = parseInt(id_cuoi) + 1;
+                var tdnoidung = $(".trAppend").html();
+                var trnoidung = "<tr class=\"trAppended\" data-id=\"" +i+ "" + "\">" + tdnoidung + "</tr>";
+                $(".tblChiTietNhapHang").append(trnoidung);
+                loadIdLenThe();
+            });
+
+            function loadIdLenThe() {
+                $(".trAppended").each(function () {
+                    var id = $(this).attr("data-id");
+                    var nameMaSanPham = "[" + id + "].MaSP";
+                    var nameSoLuongNhap = "[" + id + "].SoLuongNhap";
+                    var nameDonGiaNhap = "[" + id + "].DonGiaNhap";
+                    $(this).find(".ddlSanPham").prop("name", nameMaSanPham);
+                    $(this).find(".txtDonGia").prop("name", nameDonGiaNhap);
+                    $(this).find(".txtSoLuong").prop("name", nameSoLuongNhap);
+                })
+            };
+
+            function CapNhatID() {
+                var id_cuoi = $(".tblChiTietNhapHang").find(".trFirstChild").attr("data-id");
+                i = parseInt(id_cuoi) + 1;
+                $(".trAppended").each(function () {
+                    var id = i;
+                    $(this).attr("data-id", i);
+                    var nameMaSanPham = "[" + id + "].MaSP";
+                    var nameSoLuongNhap = "[" + id + "].SoLuongNhap";
+                    var nameDonGiaNhap = "[" + id + "].DonGiaNhap";
+                    $(this).find(".ddlSanPham").prop("name", nameMaSanPham);
+                    $(this).find(".txtDonGia").prop("name", nameDonGiaNhap);
+                    $(this).find(".txtSoLuong").prop("name", nameSoLuongNhap);
+                    i++;
+                })
+            };
+
+            $("body").delegate(".btnDelete", "click", function () {
+
+                $(this).closest("tr").remove();
+                CapNhatID();
+            });
+        });
+    </script>
+    }

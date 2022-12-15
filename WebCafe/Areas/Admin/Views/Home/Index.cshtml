@@ -1,0 +1,305 @@
+﻿@model List<WebCafe.Models.DonDatHang>
+@{
+    ViewBag.Title = "Trang chủ Admin";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+
+    <div class="col-xl-12">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Đơn hàng chưa xử lý</p>
+                                <h4 class="mb-0">@ViewBag.ChuaXuLy</h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-danger align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-copy-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Đơn hàng</p>
+                                <h4 class="mb-0">1,235</h4>
+                            </div>
+
+                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                <span class="avatar-title">
+                                    <i class="bx bx-copy-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Doanh thu</p>
+                                <h4 class="mb-0">@String.Format("{0:0,0 vnđ}", 200000000)</h4>
+                            </div>
+
+                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                                <span class="avatar-title rounded-circle bg-primary">
+                                    <i class="bx bx-archive-in font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <p class="text-muted font-weight-medium">Trung bình</p>
+                                <h4 class="mb-0">@String.Format("{0:0,0 vnđ}", 15000000)</h4>
+                            </div>
+
+                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                                <span class="avatar-title rounded-circle bg-primary">
+                                    <i class="bx bx-purchase-tag-alt font-size-24"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4 float-sm-left">Thống kê thu chi</h4>
+                <div class="float-sm-right">
+                    <ul class="nav nav-pills">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Năm</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div id="stacked-column-chart" class="apex-charts" dir="ltr"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Đơn hàng mới nhất</h4>
+                <div class="table-responsive">
+                    <table class="table table-centered table-nowrap mb-0">
+                        <thead class="thead-light">
+                            <tr>
+                                
+                                <th>Mã ĐH</th>
+                                <th>Tên KH</th>
+                                <th>Ngày đặt</th>
+                                <th>Tổng tiền</th>
+                                <th>Tình trạng</th>
+                                <th>Thanh toán</th>
+                                <th>Chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.MaDDH</td>
+                                    <td>@item.KhachHang.TenKH</td>
+                                    <td>@item.NgayDat</td>
+
+                                    @{ double? tongTien = 0;}
+                                    @foreach (var ct in item.ChiTietDonHangs)
+                                    {
+
+                                        tongTien += ct.SanPham.DonGia * ct.SoLuong;
+                                    }
+
+                                    <td>@String.Format("{0:0,0 vnđ}", tongTien)</td>
+                                    <td>@item.TinhTrangGiao</td>
+                                    <td>@item.DaThanhToan</td>
+                                    <td>
+                                        @{ var ma = "ma" + item.MaDDH; }
+                                        <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target=".@ma ">
+                                            Xem chi tiết
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade @ma " tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Chi tiết đơn hàng</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="mb-2">
+                                                            Loại khách hàng:
+                                                            @if (item.KhachHang.ThanhVien == null)
+                                                            {
+                                                                <span class="text-primary">
+                                                                    Khách vãng lai
+                                                                </span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="text-primary">
+                                                                    Thành viên
+                                                                </span>
+                                                            }
+
+                                                        </p>
+                                                        <p class="mb-4">Tên khách hàng: <span class="text-primary">@item.KhachHang.TenKH</span></p>
+
+                                                        <div class="table-responsive">
+                                                            <table class="table table-centered table-nowrap">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">Sản phẩm</th>
+                                                                        <th scope="col">Tên</th>
+                                                                        <th scope="col">Giá tiền</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    @{ double? tienDH = 0;}
+                                                                    @foreach (var ct in item.ChiTietDonHangs)
+                                                                    {
+                                                                        <tr>
+                                                                            <th scope="row">
+                                                                                <div>
+                                                                                    <img src="~/Upload/sanpham/@ct.SanPham.HinhAnh" alt="" class="avatar-sm">
+                                                                                </div>
+                                                                            </th>
+                                                                            <td>
+                                                                                <div>
+                                                                                    <h5 class="text-truncate font-size-14">@ct.SanPham.TenSP</h5>
+                                                                                    <p class="text-muted mb-0">@String.Format("{0:0,0 vnđ}", ct.SanPham.DonGia) x @ct.SoLuong</p>
+                                                                                </div>
+                                                                            </td>
+                                                                            @{ double? tienSP = ct.SanPham.DonGia * ct.SoLuong; tienDH += tienSP;}
+                                                                            <td>@String.Format("{0:0,0 vnđ}", tienSP)</td>
+                                                                        </tr>
+                                                                    }
+
+
+
+                                                                    <tr>
+                                                                        <td colspan="2">
+                                                                            <h6 class="m-0 text-right">Giảm giá:</h6>
+                                                                        </td>
+                                                                        <td>
+                                                                            @if (item.GiamGia != null)
+                                                                            {
+                                                                                @String.Format("{0:0,0 vnđ}", tienDH * item.GiamGia.GiaTri)
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                @String.Format("{0:0,0 vnđ}", 0)
+                                                                            }
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">
+                                                                            <h6 class="m-0 text-right">Tổng tiền:</h6>
+                                                                        </td>
+                                                                        <td>
+                                                                            @if (item.GiamGia != null)
+                                                                            {
+                                                                                @String.Format("{0:0,0 vnđ}", tienDH - tienDH * item.GiamGia.GiaTri)
+
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                @String.Format("{0:0,0 vnđ}", tienDH)
+
+                                                                            }
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="modal-title mt-0 mb-4">Xử lý đơn hàng</h5>
+                                                            <form method="post" action="~/Admin/QLDonHang/XuLyDonHang">
+                                                                <div class="form-group">
+                                                                    <input type="hidden" class="form-control" id="formrow-taikhoan-input" name="MaDH" value="@item.MaDDH" required>
+                                                                    <label for="formrow-firstname-input">Tình trạng đơn hàng</label>
+                                                                    <input type="text" class="form-control" id="formrow-taikhoan-input" name="TinhTrang" required>
+                                                                </div>
+                                                                <div>
+                                                                    <button type="submit" class="btn btn-primary w-md">Xử lý</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- end table-responsive -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+                    </div>
+<!-- container-fluid -->
+                </div>
+<!-- End Page-content -->
+
+            @section ClientScript{
+                <!-- JAVASCRIPT -->
+                <script src="~/Assets/admin/libs/jquery/jquery.min.js"></script>
+                <script src="~/Assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="~/Assets/admin/libs/metismenu/metis/Menu.min.js"></script>
+                <script src="~/Assets/admin/libs/simplebar/simplebar.min.js"></script>
+                <script src="~/Assets/admin/libs/node-waves/waves.min.js"></script>
+
+                <!-- apexcharts -->
+                <script src="~/Assets/admin/libs/apexcharts/apexcharts.min.js"></script>
+
+                <script src="~/Assets/admin/js/pages/dashboard.init.js"></script>
+
+                <!-- App js -->
+                <script src="~/Assets/admin/js/app.js"></script>
+            }
+

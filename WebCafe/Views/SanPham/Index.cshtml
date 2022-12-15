@@ -1,0 +1,177 @@
+﻿@model WebCafe.Models.ShopViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    a.item-hover:hover {
+        color: #BE3543;
+    }
+</style>
+<div class="bg-light py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0"><a href="index.html">Trang chủ</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Sản phẩm</strong></div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+
+        <div class="row mb-5">
+            <div class="col-md-9 order-2">
+
+                <div class="row">
+                    <div class="col-md-12 mb-5">
+                        <div class="float-md-left mb-4"><h2 class="text-black h5">Tất cả sản phẩm</h2></div>
+                        <div class="d-flex">
+                            <div class="dropdown mr-1 ml-md-auto">
+                                <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Phân loại
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                                    <a class="dropdown-item" href="/SanPham?sortColumn=new&page=1">Mới nhất</a>
+                                    <a class="dropdown-item" href="/SanPham?sortColumn=TopSale&page=1">Bán chạy nhất</a>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Sắp xếp</button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                                    <label class="dropdown-item" href="#">Theo tên</label>
+                                    <a class="dropdown-item" href="/SanPham?sortColumn=AtoZ&page=1">A to Z</a>
+                                    <a class="dropdown-item" href="/SanPham?sortColumn=ZtoA&page=1">Z to A</a>
+                                    <div class="dropdown-divider"></div>
+                                    <label class="dropdown-item" href="#">Theo giá</label>
+                                    <a class="dropdown-item" href="/SanPham?sortColumn=LowToHigh&page=1">Thấp đến cao</a>
+                                    <a class="dropdown-item" href="/SanPham?sortColumn=HighToLow&page=1">Cao đến thấp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    @foreach (var item in Model.listSanPham)
+                    {
+                        <div class="col-sm-6 col-lg-4 mb-4 aos-init aos-animate" data-aos="fade-up">
+                            <div class="block-4 text-center border">
+                                <figure class="block-4-image">
+                                    <a href="/SanPham/ChiTiet/@item.MaSP"><img src="~/Upload/sanpham/@item.HinhAnh" alt="Image placeholder" class="img-fluid"></a>
+                                </figure>
+                                <div class="block-4-text card-body">
+                                    <div class="card-title" ><h4><a href="/SanPham/ChiTiet/@item.MaSP" class="text-black">@item.TenSP</a> </h4></div>
+                                    <span class="card-text font-italic">@item.LoaiSanPham.TenLoai - @item.NguonGoc</span>
+                                    @*<p class="card-text text-black font-weight-bold">@item.DonGia.ToString("#,##") đ - @item.KhoiLuong g</p>*@
+                                    <p class="card-text text-black font-weight-bold">@String.Format("{0:0,0 vnđ}", item.DonGia) - @item.KhoiLuong g</p>
+                                    <a href="#" id="" data-id="@item.MaSP" class="btn btn-warning addtocart"><i class="mdi mdi-cart-outline"></i> Thêm vào giỏ</a><br />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="row aos-init" data-aos="fade-up">
+                    <div class="col-md-12 text-center">
+                        <div class="site-block-27">
+                            <ul>
+                                <li><a href="#">&lt;</a></li>
+                                @for (int i = 0; i < ViewBag.NumOfPage; i++)
+                                {
+                                    if (i + 1 == ViewBag.Page)
+                                    {
+                                        <li class="active"><a href="/SanPham?page=@(i+1)">@(i+1)</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="/SanPham?page=@(i+1)">@(i+1)</a></li>
+                                    }
+                                }
+                                <li><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 order-1 mb-5 mb-md-0">
+                <div class="border p-4 rounded mb-4">
+                    <h3 class="mb-3 h6 text-uppercase text-black d-block">Loại sản phẩm</h3>
+                    <ul class="list-unstyled mb-0">
+                        @foreach (var item in Model.listLoaiSoLuong)
+                        {
+                            if (item.SoLuong != 0)
+                            {
+                                <li class="mb-1"><a href="@item.MaLoai" class="d-flex"><span>@item.TenLoai</span> <span class="text-black ml-auto">(@item.SoLuong)</span></a></li>
+                            }
+                        }
+                    </ul>
+                </div>
+
+                <div class="border p-4 rounded mb-4">
+                    <img src="~/Assets/Home/images/banner.jpg" alt="Image placeholder" class="img-fluid">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="site-section site-blocks-2">
+                    <div class="row justify-content-center text-center mb-5">
+                        <div class="col-md-7 site-section-heading pt-4">
+                            <h2>Loại hạt</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model.rd3loai)
+                        {
+                            <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0 aos-init" data-aos="fade" data-aos-delay="">
+                                <a class="block-2-item" href="#">
+                                    <figure class="image">
+                                        <img src="~/Upload/loaisp/@item.HinhAnh" alt="" class="img-fluid">
+                                    </figure>
+                                    <div class="text">
+                                        <span class="text-uppercase">Loại hạt</span>
+                                        <h3>@item.TenLoai</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section ClientScript{
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+    $(function () {
+        $(".addtocart").click(function () {
+            var model = {};
+            //lấy id sản phẩm
+            model.Id = $(this).attr("data-id");
+            // lấy số lượng đặt hàng
+            model.Quantity = 1;
+            debugger;
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("AddToCart", "GioHang")',
+                data:  JSON.stringify(model) ,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    alert("Thêm giỏ hàng thành công!")
+                    $('#CartCount').text(@Session["count"] + 1);
+                },
+                error: function () {
+                    alert("Lỗi trong khi thêm vào giỏ hàng!");
+                }
+            });
+            return false;
+        });
+    });
+    </script>
+}

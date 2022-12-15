@@ -1,0 +1,147 @@
+﻿@model List<WebCafe.Models.Admin>
+@{
+    ViewBag.Title = "Tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@*@if (TempData["Success"] != null)
+{
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <i class="mdi mdi-check-all mr-2"></i>
+    @TempData["Success"]
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+</div>
+}*@
+<div class="row mb-2">
+    <div class="col-sm-4">
+        <h4 class="card-title">Danh sách tài khoản admin</h4>
+    </div>
+    <div class="col-sm-8">
+        <div class="text-sm-right">
+            <button type="button" class="btn btn-success btn-rounded waves-effect waves-light mb-2 mr-2" data-toggle="modal" data-target=".bs-example-modal-center"><i class="mdi mdi-plus mr-1"></i> Thêm tài khoản</button>
+        </div>
+    </div><!-- end col-->
+</div>
+@*form add*@
+<div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0">Thêm mới tài khoản</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="~/TaiKhoan/ThemTaiKhoan" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="formrow-firstname-input">Tài Khoản</label>
+                                <input type="text" class="form-control" id="formrow-taikhoan-input" name="TaiKhoan" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="formrow-password-input">Họ tên</label>
+                                <input type="text" class="form-control" id="formrow-hoten-input" name="HoTen" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="formrow-email-input">Email</label>
+                                <input type="email" class="form-control" id="formrow-email-input" name="Email" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="formrow-password-input">Mật khẩu</label>
+                                <input type="password" class="form-control" id="formrow-password-input" name="MatKhau" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formrow-firstname-input">Địa chỉ</label>
+                        <textarea type="text" class="form-control" id="formrow-diachi-input" name="DiaChi" required> </textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary w-md">Thêm mới</button>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+    <thead class="thead-light">
+        <tr>
+            <th>Tài khoản</th>
+            <th>Mật khẩu</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>Quyền hạn</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TaiKhoan</td>
+                <td>******</td>
+                <td>@item.HoTen</td>
+                <td>@item.Email</td>
+                <td>@item.DiaChi</td>
+                <td>@item.Role</td>
+                <td>
+                    <a href="javascript:void(0);" class="mr-3 text-primary"
+                       data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                        <i class="mdi mdi-pencil font-size-18"></i>
+                    </a>
+                    <a href="TaiKhoan/XoaTaiKhoan/@item.TaiKhoan" class="text-danger"
+                       data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" id="sa-warning">
+                        <i class="mdi mdi-close font-size-18"></i>
+
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section ClientScript{
+    <!-- Required datatable js -->
+    <script src="~/Assets/admin/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/admin/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="~/Assets/admin/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/Assets/admin/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+
+    <script src="~/Assets/admin/libs/jszip/jszip.min.js"></script>
+    <script src="~/Assets/admin/libs/pdfmake/build/pdfmake.min.js"></script>
+    <script src="~/Assets/admin/libs/pdfmake/build/vfs_fonts.js"></script>
+    <script src="~/Assets/admin/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/Assets/admin/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/Assets/admin/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+
+    <!-- Responsive examples -->
+    <script src="~/Assets/admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/Assets/admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="~/Assets/admin/libs/sweetalert2/sweetalert2.min.js"></script>
+
+    <!-- Sweet alert init js-->
+    <script src="~/Assets/admin/js/pages/sweet-alerts.init.js"></script>
+
+    <!-- Datatable init js -->
+    <script src="~/Assets/admin/js/pages/datatables.init.js"></script>
+
+}

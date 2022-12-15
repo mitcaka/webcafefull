@@ -1,0 +1,46 @@
+﻿@model WebCafe.Models.NhaCungCap
+
+@{ ViewBag.Title = "Sửa nhà cung cấp";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
+
+    <form action="~/NhaCungCap/SuaNhaCungCap/@Model.MaNCC" method="post">
+    <div class="container-fluid">
+        <div class="row">
+            <input type="hidden" class="form-control" id="formrow-taikhoan-input" name="MaNCC" value="@Model.MaNCC" required>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="formrow-password-input">Tên nhà cung cấp</label>
+                    <input type="text" class="form-control" id="formrow-hoten-input" name="TenNCC" value="@Model.TenNCC" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="formrow-email-input">Email</label>
+                    <input type="email" class="form-control" id="formrow-email-input" name="Email" value="@Model.Email" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="formrow-firstname-input">Địa chỉ</label>
+            <textarea type="text" class="form-control" id="formrow-diachi-input" name="DiaChi" required> @Model.DiaChi</textarea>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="formrow-firstname-input">Fax</label>
+                    <input type="text" class="form-control" id="formrow-diachi-input" name="Fax" value="@Model.Fax" required> </input>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="formrow-password-input">Điện thoại</label>
+                    <input type="text" class="form-control" id="formrow-hoten-input" name="DienThoai" value="@Model.DienThoai" required>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary w-md">Sửa</button>
+        </div>
+    </div>
+</form>
+
