@@ -1,6 +1,6 @@
 ﻿@model WebCafe.Models.ShopViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh sách sản phẩm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
@@ -11,7 +11,7 @@
 <div class="bg-light py-3">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 mb-0"><a href="index.html">Trang chủ</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Sản phẩm</strong></div>
+            <div class="col-md-12 mb-0"><a href="@Url.Action("Index","TrangChu")">Trang chủ</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Sản phẩm</strong></div>
         </div>
     </div>
 </div>
@@ -59,11 +59,19 @@
                                     <a href="/SanPham/ChiTiet/@item.MaSP"><img src="~/Upload/sanpham/@item.HinhAnh" alt="Image placeholder" class="img-fluid"></a>
                                 </figure>
                                 <div class="block-4-text card-body">
-                                    <div class="card-title" ><h4><a href="/SanPham/ChiTiet/@item.MaSP" class="text-black">@item.TenSP</a> </h4></div>
+                                    <div class="card-title"><h4><a href="/SanPham/ChiTiet/@item.MaSP" class="text-black">@item.TenSP</a> </h4></div>
                                     <span class="card-text font-italic">@item.LoaiSanPham.TenLoai - @item.NguonGoc</span>
                                     @*<p class="card-text text-black font-weight-bold">@item.DonGia.ToString("#,##") đ - @item.KhoiLuong g</p>*@
                                     <p class="card-text text-black font-weight-bold">@String.Format("{0:0,0 vnđ}", item.DonGia) - @item.KhoiLuong g</p>
-                                    <a href="#" id="" data-id="@item.MaSP" class="btn btn-warning addtocart"><i class="mdi mdi-cart-outline"></i> Thêm vào giỏ</a><br />
+                                    @if (item.SoLuongTon > 0)
+                                    {
+                                        <a href="#" id="" data-id="@item.MaSP" class="btn btn-warning addtocart"><i class="mdi mdi-cart-outline"></i> Thêm vào giỏ</a><br />
+                                    }
+                                    else
+                                    {
+                                        <a href="#" id="" data-id="@item.MaSP" class="btn btn-secondary"><i class="mdi mdi-cart-outline"></i> Hết hàng</a><br />
+                                    }
+
                                 </div>
                             </div>
                         </div>

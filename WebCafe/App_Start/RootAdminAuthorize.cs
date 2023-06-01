@@ -15,7 +15,7 @@ namespace WebCafe.App_Start
         {
             //check session
             var adSession = HttpContext.Current.Session["TaiKhoan"];
-            var data = db.Admins.Count(s => s.TaiKhoan == adSession & s.Role == "RootAdmin");
+            var data = db.Admins.Count(s => s.TaiKhoan == adSession.ToString() && s.Role == "RootAdmin");
             if (data != 0)
             {
                 return;

@@ -1,13 +1,12 @@
 ﻿@model List<WebCafe.Models.TinTuc>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Blog";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <section>
     <div class="container">
         <div class="text-center mb-5">
-            <h5 class="text-primary h6">Thông Tin Blog</h5>
-            <h2 class="display-20 display-md-18 display-lg-16">Blog Gần Nhất</h2>
+            <h2 class="display-20 display-md-18 display-lg-16">Tất cả Blog</h2>
         </div>
         <div class="row">
             @foreach (var item in Model)
@@ -19,9 +18,9 @@
                             @*<div class="date">@item.NgayViet</div>*@
                         </div>
                         <div class="card-body">
-                            <h3 class="h5"><a href="#!">@item.TieuDe</a></h3>
-                            <p class="display-30 text-truncate">@item.NoiDung</p>
-                            <a href="~/Blog/BlogDetail/@item.MaTin" class="read-more">read more</a>
+                            <h3 class="h5"><a href="~/Blog/BlogDetail/@item.MaTin">@item.TieuDe</a></h3>
+                            <p class="display-30 text-truncate">@item.DanhMuc.TenDanhMuc</p>
+                            <a href="~/Blog/BlogDetail/@item.MaTin" class="read-more">Đọc tiếp</a>
                         </div>
                     </article>
                 </div>

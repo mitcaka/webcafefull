@@ -9,7 +9,7 @@
 
     <div class="col-xl-12">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card mini-stats-wid">
                     <div class="card-body">
                         <div class="media">
@@ -27,13 +27,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card mini-stats-wid">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
-                                <p class="text-muted font-weight-medium">Đơn hàng</p>
-                                <h4 class="mb-0">1,235</h4>
+                                <p class="text-muted font-weight-medium">Tổng số đơn hàng </p>
+                                <h4 class="mb-0">@ViewBag.SoDonHang</h4>
                             </div>
 
                             <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
@@ -45,13 +45,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card mini-stats-wid">
                     <div class="card-body">
                         <div class="media">
                             <div class="media-body">
                                 <p class="text-muted font-weight-medium">Doanh thu</p>
-                                <h4 class="mb-0">@String.Format("{0:0,0 vnđ}", 200000000)</h4>
+                                <h4 class="mb-0">@String.Format("{0:0,0 vnđ}", ViewBag.DoanhThu)</h4>
                             </div>
 
                             <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
@@ -63,24 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted font-weight-medium">Trung bình</p>
-                                <h4 class="mb-0">@String.Format("{0:0,0 vnđ}", 15000000)</h4>
-                            </div>
-
-                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
-                                <span class="avatar-title rounded-circle bg-primary">
-                                    <i class="bx bx-purchase-tag-alt font-size-24"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
         <!-- end row -->
 
@@ -297,7 +280,56 @@
                 <!-- apexcharts -->
                 <script src="~/Assets/admin/libs/apexcharts/apexcharts.min.js"></script>
 
-                <script src="~/Assets/admin/js/pages/dashboard.init.js"></script>
+                @*<script src="~/Assets/admin/js/pages/dashboard.init.js"></script>*@
+<script>
+                    var thangs = @Html.Raw(Json.Encode(ViewBag.Thang));
+                    var tiennhaps = @Html.Raw(Json.Encode(ViewBag.TienNhap));
+                    var tienlais = @Html.Raw(Json.Encode(ViewBag.TienLai));
+
+                    var options = {
+                        chart: {
+                            height: 359, type: "bar", stacked: !0,
+                            toolbar: { show: !1 }, zoom: { enabled: !0 }
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: !1, columnWidth: "15%",
+                                endingShape: "rounded"
+                            }
+                        },
+                        dataLabels: { enabled: !1 },
+                        series: [
+                            { name: "Tiền nhập", data: tiennhaps },
+                            { name: "Tiền lãi", data: tienlais }
+
+                        ],
+                        xaxis: {
+                            categories: thangs
+                        },
+                        colors: ["#556ee6", "#f1b44c", "#34c38f"], legend: { position: "bottom" },
+                        fill: { opacity: 1 }
+                    },
+                        chart = new ApexCharts(document.querySelector("#stacked-column-chart"), options); chart.render();
+                    options = {
+                        chart: { height: 180, type: "radialBar", offsetY: -10 },
+                        plotOptions: {
+                            radialBar: {
+                                startAngle: -135, endAngle: 135,
+                                dataLabels: {
+                                    name: { fontSize: "13px", color: void 0, offsetY: 60 },
+                                    value: { offsetY: 22, fontSize: "16px", color: void 0, formatter: function (e) { return e + "%" } }
+                                }
+                            }
+                        },
+                        colors: ["#556ee6"], fill: {
+                            type: "gradient", gradient: {
+                                shade: "dark", shadeIntensity: .15,
+                                inverseColors: !1, opacityFrom: 1, opacityTo: 1, stops: [0, 50, 65, 91]
+                            }
+                        }, stroke: { dashArray: 4 },
+                        series: [67], labels: ["Series A"]
+                    }; (chart = new ApexCharts(document.querySelector("#radialBar-chart"), options)).render();
+</script>
 
                 <!-- App js -->
                 <script src="~/Assets/admin/js/app.js"></script>

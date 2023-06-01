@@ -11,8 +11,8 @@ using WebCafe.Models;
 
 namespace WebCafe.Areas.Admin.Controllers
 {
-    [AdminAuthorize]
-    [RootAdminAuthorize]
+    //[AdminAuthorize]
+    //[RootAdminAuthorize]
     public class TaiKhoanController : Controller
     {
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();

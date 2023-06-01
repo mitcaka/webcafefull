@@ -10,7 +10,7 @@ using WebCafe.Models;
 
 namespace WebCafe.Areas.Admin.Controllers
 {
-    [AdminAuthorize]
+    //[AdminAuthorize]
     public class GiamGiaController : Controller
     {
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();
@@ -22,7 +22,6 @@ namespace WebCafe.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [ValidateInput(false)]
         public ActionResult ThemGiamGia(GiamGia gg)
         {
             WebCafe.Models.GiamGia giamGia = new Models.GiamGia();
@@ -68,7 +67,6 @@ namespace WebCafe.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [ValidateInput(false)]
         public ActionResult SuaGiamGia(GiamGia gg)
         {
             GiamGia giamGia = db.GiamGias.FirstOrDefault(x => x.MaGiamGia == gg.MaGiamGia);

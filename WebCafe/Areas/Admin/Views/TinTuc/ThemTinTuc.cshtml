@@ -2,8 +2,7 @@
     ViewBag.Title = "Thêm tin tức";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
-<form action="~/TinTuc/ThemTinTuc" method="post">
+<form action="~/TinTuc/ThemTinTuc" method="post" enctype="multipart/form-data">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6">
@@ -12,7 +11,6 @@
                     <input type="text" class="form-control" name="TieuDe" required>
                 </div>
             </div>
-
             <div class="col-lg-3">
                 <div class="form-group">
                     <label for="formrow-firstname-input">Url-friendly</label>
@@ -30,7 +28,15 @@
                         }
                     </select>
                 </div>
-
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="preview">
+                    <img id="img-preview" src="" />
+                    <label id="labelimg" for="file-input">Tải hình ảnh</label>
+                    <input accept="image/*" type="file" name="hinhAnh" id="file-input" />
+                </div>
             </div>
         </div>
         <div class="row">
@@ -39,25 +45,21 @@
             </div>
         </div>
         <br />
-
         <div>
             <button type="submit" class="btn btn-primary w-md">Thêm mới</button>
         </div>
     </div>
 </form>
 @section ClientScript{
+    @*img upload*@
+    <script src="~/Assets/admin/js/pages/upload_img.js"></script>
     <!--tinymce js-->
     <script src="~/Assets/admin/libs/tinymce/tinymce.min.js"></script>
-
     <!-- Summernote js -->
     <script src="~/Assets/admin/libs/summernote/summernote-bs4.min.js"></script>
     <script src="~/Assets/admin/libs/select2/js/select2.min.js"></script>
-
     <!-- init js -->
     <script src="~/Assets/admin/js/pages/form-editor.init.js"></script>
     <script src="~/Assets/admin/js/pages/form-advanced.init.js"></script>
-
-
-
 
 }

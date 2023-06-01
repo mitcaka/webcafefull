@@ -4,10 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using WebCafe.App_Start;
 using WebCafe.Models;
 
 namespace WebCafe.Areas.Admin.Controllers
 {
+    //[AdminAuthorize]
+    //[RootAdminAuthorize]
     public class QLNhapHangController : Controller
     {
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();

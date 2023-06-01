@@ -12,7 +12,6 @@ namespace WebCafe.Controllers
     {
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();
         private double giaTri;
-        int i = 0;
         // GET: GioHang
         public ActionResult Index()
         {
@@ -90,6 +89,7 @@ namespace WebCafe.Controllers
         public ActionResult AddCoupon(string Ma)
         {
             List<WebCafe.Models.GiamGia> giamGias = db.GiamGias.Where(x => x.active == true).ToList();
+            bool check = false;
             if(Session["TaiKhoanTV"] != null)
             {
                 foreach (GiamGia item in giamGias)
@@ -104,8 +104,12 @@ namespace WebCafe.Controllers
                     }
                     else
                     {
-                        return Json(new { GiaTri = 0, Message = "Mã giảm giá không hợp lệ", JsonRequestBehavior.DenyGet });
+                        check = true;
                     }
+                }
+                if (check)
+                {
+                    return Json(new { GiaTri = 0, Message = "Mã giảm giá không hợp lệ", JsonRequestBehavior.DenyGet });
                 }
             }
             else

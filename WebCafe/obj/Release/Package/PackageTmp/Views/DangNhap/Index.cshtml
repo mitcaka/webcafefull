@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Đăng nhập";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link rel="stylesheet" href="~/Assets/Home/css/login.css">
@@ -51,7 +51,7 @@
                 <a href="#" id="forgot_pswd">Không Nhớ Mật Khẩu</a>
                 <hr>
                 <!-- <p>Don't have an account!</p>  -->
-                <button class="btn btn-block" type="button" id="btn-signup" style="border-color: #28a745;"><i class="fas fa-user-plus"></i> <a href="register.html">Đăng Kí Tài Khoản Mới</a> </button>
+                <button class="btn btn-block" type="button" id="btn-signup" style="border-color: #28a745;"><i class="fas fa-user-plus"></i> <a href="@Url.Action("Index", "DangKy")">Đăng Kí Tài Khoản Mới</a> </button>
             </form>
 
             <br>

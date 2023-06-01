@@ -1,13 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Về chúng tôi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="bg-light py-3">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">About</strong></div>
+            <div class="col-md-12 mb-0"><a href="@Url.Action("Index","TrangChu")">Trang chủ</a> <span class="mx-2 mb-0">/</span> <strong class="text-black"> Về chúng tôi</strong></div>
         </div>
     </div>
 </div>

@@ -8,14 +8,14 @@ using WebCafe.Models;
 
 namespace WebCafe.Areas.Admin.Controllers
 {
-    [AdminAuthorize]
+    //[AdminAuthorize]
     public class QLDonHangController : Controller
     {
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();
         // GET: Admin/QLDonHang
         public ActionResult Index()
         {
-            List<WebCafe.Models.DonDatHang> donDatHangs = db.DonDatHangs.ToList();
+            List<WebCafe.Models.DonDatHang> donDatHangs = db.DonDatHangs.OrderByDescending(row => row.MaDDH).ToList();
             ViewBag.TitleAction = "Danh sách đơn hàng";
             return View(donDatHangs);
         }

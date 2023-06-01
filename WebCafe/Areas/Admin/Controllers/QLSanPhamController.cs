@@ -10,7 +10,7 @@ using WebCafe.Models;
 
 namespace WebCafe.Areas.Admin.Controllers
 {
-    [AdminAuthorize]
+    //[AdminAuthorize]
     public class QLSanPhamController : Controller
     {
         // GET: Admin/SanPham
@@ -21,11 +21,10 @@ namespace WebCafe.Areas.Admin.Controllers
             ViewBag.TitleAction = "Danh sách sản phẩm";
             return View(SanPhams);
         }
-        [RootAdminAuthorize]
+        //[RootAdminAuthorize]
         public ActionResult ThemMoi()
         {
             ViewBag.LoaiSanPham = db.LoaiSanPhams.ToList();
-            int i = 0;
             return View();
         }
 

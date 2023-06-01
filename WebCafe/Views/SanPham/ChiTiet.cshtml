@@ -85,7 +85,17 @@
 
                     </div>
                     <div class="col-md-6">
-                        <p class="text-lg-center"><a href="#" id="addtocart" class="buy-now btn btn-sm btn-warning"><i class="mdi mdi-cart-arrow-down"></i>Thêm vào giỏ hàng</a></p>
+                        @if (Model.SoLuongTon > 0)
+                        {
+
+
+                            <p class="text-lg-center"><a href="#" id="addtocart" class="buy-now btn btn-sm btn-warning"><i class="mdi mdi-cart-arrow-down"></i>Thêm vào giỏ hàng</a></p>
+                        }
+                        else
+                        {
+                            <p class="text-lg-center"><a href="#" id="" class="buy-now btn btn-sm btn-secondary"><i class="mdi mdi-cart-arrow-down"></i>Hết hàng</a></p>
+                        }
+
                     </div>
                 </div>
 

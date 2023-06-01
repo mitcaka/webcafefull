@@ -1,6 +1,6 @@
 ﻿@model WebCafe.Models.TinTuc
 @{
-    ViewBag.Title = "BlogDetail";
+    ViewBag.Title = "Chi tiết bài đăng";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="blog-single gray-bg">
@@ -12,20 +12,20 @@
                         <img src="~/Upload/tintuc/@Model.HinhAnh" title="" alt="">
                     </div>
                     <div class="article-title">
-                        <h6><a href="#">Lifestyle</a></h6>
+                        <h6><a href="#">@Model.DanhMuc.TenDanhMuc</a></h6>
                         <h2>@Model.TieuDe</h2>
                         <div class="media">
                             <div class="avatar">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" title="" alt="">
                             </div>
                             <div class="media-body">
-                                <label>Rachel Roth</label>
+                                <label>Nguyễn Trung Nguyên</label>
                                 <span>@Model.NgayViet</span>
                             </div>
                         </div>
                     </div>
                     <div class="article-content">
-                            @Model.NoiDung
+                        @Html.Raw(Model.NoiDung)
                     </div>
                     <div class="nav tag-cloud">
                         <a href="#">Design</a>
@@ -69,7 +69,7 @@
                 <!-- Author -->
                 <div class="widget widget-author">
                     <div class="widget-title">
-                        <h3>Author</h3>
+                        <h3>Tác giả</h3>
                     </div>
                     <div class="widget-body">
                         <div class="media align-items-center">
@@ -77,10 +77,10 @@
                                 <img src="https://bootdey.com/img/Content/avatar/avatar6.png" title="" alt="">
                             </div>
                             <div class="media-body">
-                                <h6>Hello, I'm<br> Rachel Roth</h6>
+                                <h6>Xin chào, Tôi là<br> Nguyễn Trung Nguyên</h6>
                             </div>
                         </div>
-                        <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores</p>
+                        <p>Tôi thiết kế và phát triển các dịch vụ cho khách hàng thuộc mọi quy mô, chuyên tạo các trang web, dịch vụ web và cửa hàng trực tuyến phong cách, hiện đại</p>
                     </div>
                 </div>
                 <!-- End Author -->

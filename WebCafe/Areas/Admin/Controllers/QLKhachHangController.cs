@@ -11,7 +11,7 @@ using WebCafe.Models;
 
 namespace WebCafe.Areas.Admin.Controllers
 {
-    [AdminAuthorize]
+    //[AdminAuthorize]
     public class QLKhachHangController : Controller
     {
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();

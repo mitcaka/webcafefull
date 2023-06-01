@@ -41,29 +41,29 @@ namespace WebCafe.Controllers
             //Sort
             if (sortColumn == "AtoZ")
             {
-                SanPhams = db.SanPhams.OrderBy(row => row.TenSP).ToList();
+                SanPhams = db.SanPhams.Where(x => x.DaXoa == true).OrderBy(row => row.TenSP).ToList();
                 shopModel.listSanPham = SanPhams;
             }
             else if(sortColumn == "ZtoA")
             {
-                SanPhams = db.SanPhams.OrderByDescending(row => row.TenSP).ToList();
+                SanPhams = db.SanPhams.Where(x => x.DaXoa == true).OrderByDescending(row => row.TenSP).ToList();
                 shopModel.listSanPham = SanPhams;
             }else if(sortColumn == "LowToHigh")
             {
-                SanPhams = db.SanPhams.OrderBy(row => row.DonGia).ToList();
+                SanPhams = db.SanPhams.Where(x => x.DaXoa == true).OrderBy(row => row.DonGia).ToList();
                 shopModel.listSanPham = SanPhams;
             }
             else if(sortColumn == "HighToLow")
             {
-                SanPhams = db.SanPhams.OrderByDescending(row => row.DonGia).ToList();
+                SanPhams = db.SanPhams.Where(x => x.DaXoa == true).OrderByDescending(row => row.DonGia).ToList();
                 shopModel.listSanPham = SanPhams;
             }else if(sortColumn == "new")
             {
-                SanPhams = db.SanPhams.OrderByDescending(row => row.NgayCapNhat).ToList();
+                SanPhams = db.SanPhams.Where(x => x.DaXoa == true).OrderByDescending(row => row.NgayCapNhat).ToList();
                 shopModel.listSanPham = SanPhams;
             }else if(sortColumn == "TopSale")
             {
-                SanPhams = db.SanPhams.OrderByDescending(row => row.LuotMua).ToList();
+                SanPhams = db.SanPhams.Where(x => x.DaXoa == true).OrderByDescending(row => row.LuotMua).ToList();
                 shopModel.listSanPham = SanPhams;
             }
             //search

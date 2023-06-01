@@ -9,7 +9,7 @@ using WebCafe.Models;
 
 namespace WebCafe.Areas.Admin.Controllers
 {
-    [AdminAuthorize]
+    //[AdminAuthorize]
     public class NhaCungCapController : Controller
     {
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();
